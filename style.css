@@ -1,0 +1,174 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+:root{
+    --mainPurple: hsl(259, 100%, 65%);
+    --lightRed: hsl(0, 100%, 67%);
+    --white:hsl(0, 0%, 100%);
+    --offWhite:hsl(0, 0%, 94%);
+    --lightGrey:hsl(0, 0%, 86%);
+    --smokeyGrey:hsl(0, 1%, 44%);
+    --offBlack:hsl(0, 0%, 8%);
+
+
+}
+body{
+    background: var(--offWhite);
+    font-family: "Poppins", sans-serif;
+}
+main{
+    width: 60%;
+    background: var(--white);
+    margin: auto;
+    margin-top: 5rem;
+    max-width: 1000px;
+    border-radius: 25px 25px 200px 25px;
+}
+.time_input{
+    width: 20%;
+}
+main form label{
+    color: var(--smokeyGrey);
+    letter-spacing: .2rem;
+    font-weight:bold;
+    margin-bottom: .3rem;
+}
+main form .inputs{
+    display: flex;
+    padding: 4rem 0 0 4rem;
+}
+main form label{
+    display: block;
+}
+main form input{
+    font-size: 2rem;
+    width: 90%;
+    padding: .8rem;
+    padding-left: 1.5rem;
+    border: solid var(--lightGrey) 1px;
+    border-radius: 10px;
+    font-weight: bold;
+
+}
+main form input:focus{
+    border: 1px solid var(--mainPurple);
+    outline: none;
+
+}
+.buttonContainer{
+    position: relative;
+    display: flex;
+    justify-content: end;
+    margin-right: 3.5rem;
+    overflow: hidden;
+}
+.buttonContainer::before{
+    content: '';
+    position: absolute;
+    left:60px;
+    top: 50%;
+    height: 2px;
+    background: var(--lightGrey);
+    width: 100%;
+}
+button{
+    background: var(--mainPurple);
+    padding: 1.6rem;
+    border-radius: 100px;
+    border: none;
+    display: inline;
+    cursor: pointer;
+    z-index: 1;
+}
+button:hover{
+    background: black;
+}
+.results{
+    padding: 3rem 5rem;
+    font-size: 6rem;
+    font-weight: 900;
+    line-height: 7rem;
+    margin-bottom: 6rem;
+}
+.results p{
+    font-style: italic;
+}
+.results p span{
+    color: var(--mainPurple);
+    margin-right: 20px;
+}
+
+.attribution{
+    text-align: center;
+}
+.error{
+    font-size: .7rem;
+    margin-top: 1.1rem;
+    font-style: italic;
+    color: red;
+}
+.hide{
+    display: none;
+}
+
+@media screen and (max-width: 1000px) {
+
+    main{
+        width: 90%;
+        border-radius: 25px 25px 150px 25px;
+    }
+    .results{
+        padding: 3rem 2rem;
+        font-size: 3rem;
+    }
+    .results p span{
+        font-size: 3.5rem;
+        margin-right: 10px;
+    }
+    button{
+        padding: 1.2rem;
+
+    }
+    button img{
+        width: 30px;
+    }
+    .buttonContainer{
+        justify-content: center;
+        margin: 1.3rem 1rem 0 0;
+    }
+    .buttonContainer::before{
+        content: '';
+        position: absolute;
+        left:20px;
+        top: 50%;
+        height: 2px;
+        background: var(--lightGrey);
+        width: 100%;
+    }
+    .time_input{
+        width: 100%;
+    }
+    main form .inputs{
+    display: flex;
+    padding: 2rem;
+}
+main form label{
+font-size: .8rem;
+}
+main form input{
+    font-size: 1.2rem;
+    width: 80%;
+    padding: .9rem ;
+    padding-left: 1.1rem;
+}
+.results{
+    padding: 2rem 1.5rem;
+    font-size: 3rem;
+    font-weight: 900;
+    line-height: 4rem;
+    margin-bottom: 8rem;
+}
+}
+
