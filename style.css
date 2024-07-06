@@ -109,6 +109,9 @@ button:hover{
     font-style: italic;
     color: red;
 }
+.inputError{
+    border: solid 1px var(--lightRed);
+}
 .hide{
     display: none;
 }

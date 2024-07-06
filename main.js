@@ -46,10 +46,12 @@ function submitInfo(e){
         if(input.value === null || input.value === ""){
             input.nextElementSibling.classList.remove('hide')
                        input.nextElementSibling.textContent = "This Field is Required"
+                       input.classList.add('inputError');
             flag = true
         }else if(isNaN(numberInput)){
             input.nextElementSibling.textContent = "Please enter a valid Number"
             input.nextElementSibling.classList.remove('hide')
+            input.classList.add('inputError');
             flag = true
 
         }else{
@@ -59,6 +61,7 @@ function submitInfo(e){
     }
     if(!flag){
         individualValidation()
+        input.classList.remove('inputError');
     } 
 }
 const individualValidation = ()=>{
@@ -68,18 +71,23 @@ const individualValidation = ()=>{
     const yearInputNumber = Number(yearInput.value)
     const thisYear = Number(currentDate.getFullYear())
     const maxDaysinMonth = getMaxDaysinMonth();
+     yearInput.classList.remove('inputError');
+     monthInput.classList.remove('inputError');
+     dayInput.classList.remove('inputError');
     if(yearInputNumber > thisYear){
         yearInput.nextElementSibling.classList.remove('hide')
         yearInput.nextElementSibling.textContent = "Must Be in the Past"
+        yearInput.classList.add('inputError');
         flag= true}
     else if(monthInputNumber > 12){
         monthInput.nextElementSibling.classList.remove('hide')
         monthInput.nextElementSibling.textContent = "Please enter a valid Month"
-        console.log(monthInputNumber)
+        monthInput.classList.add('inputError');
         flag = true
     }else if(dayInputNumber > maxDaysinMonth){
             dayInput.nextElementSibling.classList.remove('hide')
             dayInput.nextElementSibling.textContent = "Please enter a valid Date"
+            dayInput.classList.add('inputError');
             flag = true;
         }
       else if(yearInputNumber == currentYear && monthInputNumber  > currentMonth ){
